@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - enterpriseappdev@localhost" uuid="eac3ffc8-655e-4fdd-891c-a956d777e845">
+    <database-info product="MySQL" version="5.6.26-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="enterpriseappdev"/>
+    <table name="courses" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="id_course" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lecturer_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id_course"/>
+      <foreign-key name="courses_ibfk_1" columns="lecturer_id" ref-table="lecturers" ref-schema="" ref-catalog="enterpriseappdev" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tasks_ibfk_1" table="tasks" schema="" catalog="enterpriseappdev" columns="course_id"/>
+      <index name="id_course_UNIQUE" unique="true" columns="id_course"/>
+    </table>
+    <table name="lecturers" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="courses_ibfk_1" table="courses" schema="" catalog="enterpriseappdev" columns="lecturer_id"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="nationalities" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="students_ibfk_1" table="students" schema="" catalog="enterpriseappdev" columns="id_nationality"/>
+      <index name="description_UNIQUE" unique="true" columns="description"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="questionnaire" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="student_number" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="task_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="MWL_total" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="RSME" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="time_1" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="NASA_mental" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_physical" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_temporal" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_performance" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_frustration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_effort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_temporal_or_frustration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_performance_or_mental" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_mental_or_physical" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_frustration_or_performance" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_temporal_or_effort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_physical_or_frustration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_performance_or_temporal" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_mental_or_effort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_physical_or_temporal" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_frustration_or_effort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_physical_or_performance" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_temporal_or_mental" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_effort_or_physical" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_frustration_or_mental" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NASA_performance_or_effort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_solving_deciding" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_response_selection" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_task_space" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_verbal_material" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_visual_resources" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_auditory_resources" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_manual_response" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WP_speech_response" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_mental" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_parallelism" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_temporal" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_manual" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_visual" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_solving_deciding" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_frustration" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_context_bias" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_task_space" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_motivation" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_verbal_material" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_skill" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_auditory_resources" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_physical_demand" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_speech_response" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_past_knowledge" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_arousal" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_performance" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AT_response_selection" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="time_2" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="intrusiveness" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="not_valid" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="questionnaire_ibfk_2" columns="task_number" ref-table="tasks" ref-schema="" ref-catalog="enterpriseappdev" ref-columns="task_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="questionnaire_ibfk_3" columns="student_number" ref-table="students" ref-schema="" ref-catalog="enterpriseappdev" ref-columns="student_number" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="students" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="student_number" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_nationality" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="student_number"/>
+      <foreign-key name="students_ibfk_1" columns="id_nationality" ref-table="nationalities" ref-schema="" ref-catalog="enterpriseappdev" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="questionnaire_ibfk_3" table="questionnaire" schema="" catalog="enterpriseappdev" columns="student_number"/>
+    </table>
+    <table name="tasks" schema="" catalog="enterpriseappdev" type="TABLE">
+      <column name="task_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="duration_mins" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="daytime" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="course_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="task_id"/>
+      <foreign-key name="tasks_ibfk_1" columns="course_id" ref-table="courses" ref-schema="" ref-catalog="enterpriseappdev" ref-columns="id_course" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="questionnaire_ibfk_2" table="questionnaire" schema="" catalog="enterpriseappdev" columns="task_number"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - @localhost" uuid="829c77de-0809-450d-853d-d19b9a5137a4">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

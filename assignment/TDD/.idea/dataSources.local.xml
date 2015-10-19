@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - enterpriseappdev@localhost" uuid="eac3ffc8-655e-4fdd-891c-a956d777e845">
+      <secret-storage>memory</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>enterpriseappdev.*</schema-pattern>
+      <default-schemas>enterpriseappdev.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - @localhost" uuid="829c77de-0809-450d-853d-d19b9a5137a4">
+      <secret-storage>memory</secret-storage>
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>
