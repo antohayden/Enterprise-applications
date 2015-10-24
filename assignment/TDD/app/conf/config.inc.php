@@ -1,8 +1,8 @@
 <?php
 /* database constants */
 define("DB_HOST", "localhost" ); 		// set database host
-define("DB_USER", "root" ); 			// set database user
-define("DB_PASS", "root" ); 				// set database password
+define("DB_USER", "user_read_only" ); 			// set database user
+define("DB_PASS", "password" ); 				// set database password
 define("DB_PORT", 3306);				// set database port
 define("DB_NAME", "enterpriseappdev" ); 			// set database name
 define("DB_CHARSET", "utf8" ); 			// set database charset
