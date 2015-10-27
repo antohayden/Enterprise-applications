@@ -13,6 +13,10 @@ class QuestionnairesModel {
         $this->dbmanager->openConnection();
     }
 
+    public function getQuestionnaires($taskId){
+        return ($this->QuestionnaireDAO->getQuestionnaires($taskId));
+    }
+
     public function getMWL($taskId) {
         return ($this->QuestionnaireDAO->getMWL ($taskId));
     }

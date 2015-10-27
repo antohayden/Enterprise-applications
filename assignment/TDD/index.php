@@ -1,9 +1,11 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 require_once "Slim/Slim.php";
 Slim\Slim::registerAutoloader ();
 
 $app = new \Slim\Slim (); // slim run-time object
-                          
+
+
 require_once "app/conf/config.inc.php";
 
 function authenticate(\Slim\Route $route){
@@ -13,7 +15,7 @@ function authenticate(\Slim\Route $route){
     $uid = $app->getEncryptedCookie('username');
     $pw = $app->getEncryptedCookie('password');
 
-    if(validateUser($uid, $pw))
+   // if(validateUser($uid, $pw))
         return true;
 
     $app->halt(HTTPSTATUS_UNAUTHORIZED, GENERAL_CONTENT_AUTHORIZATION_ERROR);
@@ -32,8 +34,8 @@ $app->map ( "/login", function () use($app) {
 
         $response = $app->response();
     try{
-        $app->setEncryptedCookie('username', USERNAME, '10 minutes');
-        $app->setEncryptedCookie('password', PASSWORD, '10 minutes');
+        $app->setEncryptedCookie('username', USERNAME, '2 days');
+        $app->setEncryptedCookie('password', PASSWORD, '2 days');
 
         $response->status(HTTPSTATUS_OK);
         $response->write(GENERAL_SUCCESS_MESSAGE);

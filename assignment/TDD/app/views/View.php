@@ -11,18 +11,17 @@ class View
 
 	public function output(){
 
-        $headerValue = $this->app->request->headers['Accept'];
+        $AcceptHeaderValue = $this->app->request->headers['Accept'];
+        $ContentTypeHeaderValue = $this->app->request->headers['Content-Type'];
 
-        switch($headerValue){
-            case('application/xml'):
-                $this->XMLResponse($this->model->apiResponse);
-                break;
-            case('application/json'):
-                $this->JSONResponse($this->model->apiResponse);
-                break;
-            default:
-                $this->JSONResponse($this->model->apiResponse);
+        if ( $AcceptHeaderValue == 'application/xml' || $ContentTypeHeaderValue == 'application/xml') {
+            $this->XMLResponse($this->model->apiResponse);
         }
+        else if ($AcceptHeaderValue == 'application/json' || $ContentTypeHeaderValue == 'application/json') {
+            $this->JSONResponse($this->model->apiResponse);
+        }
+        else
+            $this->JSONResponse($this->model->apiResponse);
 	}
 
     private function JSONResponse(array $apiResponse){

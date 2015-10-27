@@ -8,6 +8,23 @@ class QuestionnaireDAO {
         $this->dbManager = $DBMngr;
     }
 
+    public function getQuestionnaires($id){
+
+        $sql = "SELECT * ";
+        $sql .= "FROM questionnaire ";
+
+        if ($id) {
+            $sql .= "WHERE id = ";
+            $sql .=  $id;
+        }
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
+
     public function getMWL($taskId) {
 
         $sql = "SELECT MWL_total ";
