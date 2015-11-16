@@ -8,28 +8,6 @@ $app = new \Slim\Slim (); // slim run-time object
 
 require_once "app/conf/config.inc.php";
 
-function authenticate(\Slim\Route $route){
-
-    $app = \Slim\Slim::getInstance();
-
-    $uid = $app->getEncryptedCookie('username');
-    $pw = $app->getEncryptedCookie('password');
-
-   // if(validateUser($uid, $pw))
-        return true;
-
-    $app->halt(HTTPSTATUS_UNAUTHORIZED, GENERAL_CONTENT_AUTHORIZATION_ERROR);
-}
-
-function validateUser($uid, $pw){
-
-    if($uid == USERNAME && $pw == PASSWORD)
-        return true;
-    else
-        return false;
-
-}
-
 $app->map ( "/login", function () use($app) {
 
         $response = $app->response();
@@ -50,14 +28,14 @@ $app->map ( "/login", function () use($app) {
 } )->via ( "GET");
 
 
-$app->map ( "/statistics/students", "authenticate", function () use($app) {
+$app->map ( "/statistics/students", function () use($app) {
 
     $action = ACTION_GET_STUDENTS_AGES;
 	return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app);
 	
 } )->via ( "GET");
 
-$app->map ( "/statistics/students/:nationality", "authenticate", function ($nationality = null) use($app) {
+$app->map ( "/statistics/students/:nationality", function ($nationality = null) use($app) {
 
     $parameters["NationalityString"] = $nationality;
     $action = ACTION_GET_STUDENTS_AGES_BY_NATIONALITY;
@@ -65,7 +43,8 @@ $app->map ( "/statistics/students/:nationality", "authenticate", function ($nati
     return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app, $parameters);
 
 } )->via ( "GET");
-$app->map ( "/statistics/tasks", "authenticate", function () use($app) {
+
+$app->map ( "/statistics/tasks", function () use($app) {
 
     $action = ACTION_GET_NUM_TASKS;
 
@@ -73,7 +52,8 @@ $app->map ( "/statistics/tasks", "authenticate", function () use($app) {
 
 } )->via ( "GET");
 
-$app->map ( "/statistics/questionnaires", "authenticate", function () use($app) {
+/*Get all questionnaires*/
+$app->map ( "/statistics/questionnaires", function () use($app) {
 
     $action = ACTION_GET_QUESTIONNAIRES;
 
@@ -81,10 +61,32 @@ $app->map ( "/statistics/questionnaires", "authenticate", function () use($app) 
 
 } )->via ( "GET");
 
-$app->map ( "/statistics/questionnaires/:taskID", "authenticate", function ($taskID = null) use($app) {
+
+/*Get the task id of all questionnaires*/
+$app->map ( "/statistics/questionnaires/task", function () use($app) {
+
+    $action = ACTION_GET_TASK_ID_OF_QUESTIONNAIRES;
+
+    return new loadRunMVCComponents ( "QuestionnairesModel", "QuestionnairesController", "View", $action, $app);
+
+} )->via ( "GET");
+
+
+/*Get all questionnaires by task id*/
+$app->map ( "/statistics/questionnaires/task/:taskID", function ($taskID = null) use($app) {
 
     $parameters["TaskIDString"] = $taskID;
-    $action = ACTION_GET_QUESTIONNAIRES_BY_TASKID;
+    $action = ACTION_GET_QUESTIONNAIRES_BY_TASK_ID;
+
+    return new loadRunMVCComponents ( "QuestionnairesModel", "QuestionnairesController", "View", $action, $app, $parameters);
+
+} )->via ( "GET");
+
+/*Get questionnaire by questionnaire id*/
+$app->map ( "/statistics/questionnaires/:questionID", function ($questionID = null) use($app) {
+
+    $parameters["QuestionIDString"] = $questionID;
+    $action = ACTION_GET_QUESTIONNAIRE_BY_ID;
 
     return new loadRunMVCComponents ( "QuestionnairesModel", "QuestionnairesController", "View", $action, $app, $parameters);
 

@@ -8,7 +8,37 @@ class QuestionnaireDAO {
         $this->dbManager = $DBMngr;
     }
 
-    public function getQuestionnaires($id){
+    public function getQuestionnaires($task_number){
+
+        $sql = "SELECT * ";
+        $sql .= "FROM questionnaire ";
+
+        if ($task_number) {
+            $sql .= "WHERE task_number = ";
+            $sql .=  $task_number;
+        }
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
+
+    public function getTaskIdOfQuestionnaires(){
+
+        $sql = "SELECT task_number , count(*) as count ";
+        $sql .= "FROM questionnaire ";
+        $sql .= "group by task_number";
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
+
+    public function getQuestionnaireById($id){
 
         $sql = "SELECT * ";
         $sql .= "FROM questionnaire ";

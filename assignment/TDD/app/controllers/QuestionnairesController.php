@@ -17,9 +17,16 @@ class QuestionnairesController {
                 case ACTION_GET_QUESTIONNAIRES :
                     $this->getQuestionnaires();
                     break;
-                case ACTION_GET_QUESTIONNAIRES_BY_TASKID :
+                case ACTION_GET_QUESTIONNAIRES_BY_TASK_ID :
                     $string = $parameters ["TaskIDString"];
                     $this->getQuestionnairesByTaskId($string);
+                    break;
+                case ACTION_GET_TASK_ID_OF_QUESTIONNAIRES :
+                    $this->getTaskIdOfQuestionnaires();
+                    break;
+                case ACTION_GET_QUESTIONNAIRE_BY_ID :
+                    $string = $parameters ["QuestionIDString"];
+                    $this->getQuestionnaireById($string);
                     break;
                 default:
             }
@@ -60,6 +67,18 @@ class QuestionnairesController {
         }
     }
 
+    private function getTaskIdOfQuestionnaires(){
+
+        $taskIds = $this->model->getTaskIdOfQuestionnaires();
+        $num = count($taskIds);
+
+        if ( $num == 0)
+            $this->prepareResponse(null,null);
+        else {
+            $this->prepareResponse( 1 , $taskIds);
+        }
+    }
+
     private function getQuestionnairesByTaskId($taskId){
 
         if(!is_numeric($taskId)) {
@@ -81,6 +100,30 @@ class QuestionnairesController {
             }
         }
     }
+
+
+    private function getQuestionnaireById($taskId){
+
+        if(!is_numeric($taskId)) {
+            $this->prepareResponse("BAD_REQUEST", null);
+            return;
+        }
+
+        $questionnaire = $this->model->getQuestionnaireById($taskId);
+        $num = count($questionnaire);
+
+        if($num == 0)
+            $this->prepareResponse(null, null);
+        else {
+
+            if ( $num == 0)
+                $this->prepareResponse(null,null);
+            else {
+                $this->prepareResponse( 1 , $questionnaire);
+            }
+        }
+    }
+
 
 }
 ?>

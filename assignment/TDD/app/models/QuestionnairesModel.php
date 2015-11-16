@@ -17,6 +17,14 @@ class QuestionnairesModel {
         return ($this->QuestionnaireDAO->getQuestionnaires($taskId));
     }
 
+    public function getTaskIdOfQuestionnaires(){
+        return ($this->QuestionnaireDAO->getTaskIdOfQuestionnaires());
+    }
+
+    public function getQuestionnaireById($id){
+        return ($this->QuestionnaireDAO->getQuestionnaireById($id));
+    }
+
     public function getMWL($taskId) {
         return ($this->QuestionnaireDAO->getMWL ($taskId));
     }
