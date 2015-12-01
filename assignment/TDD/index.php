@@ -30,15 +30,23 @@ $app->map ( "/login", function () use($app) {
 
 $app->map ( "/statistics/students", function () use($app) {
 
-    $action = ACTION_GET_STUDENTS_AGES;
+    $action = ACTION_GET_STUDENTS;
 	return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app);
 	
 } )->via ( "GET");
 
-$app->map ( "/statistics/students/:nationality", function ($nationality = null) use($app) {
+$app->map ( "/statistics/students/:id", function ($studentNumber = null) use($app) {
+
+    $parameters["StudentNumberString"] = $studentNumber;
+    $action = ACTION_GET_STUDENT_BY_ID;
+    return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app, $parameters);
+
+} )->via ( "GET");
+
+$app->map ( "/statistics/students/nationality/:nationality", function ($nationality = null) use($app) {
 
     $parameters["NationalityString"] = $nationality;
-    $action = ACTION_GET_STUDENTS_AGES_BY_NATIONALITY;
+    $action = ACTION_GET_STUDENTS_BY_NATIONALITY;
 
     return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app, $parameters);
 

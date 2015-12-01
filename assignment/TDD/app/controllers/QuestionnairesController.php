@@ -102,14 +102,14 @@ class QuestionnairesController {
     }
 
 
-    private function getQuestionnaireById($taskId){
+    private function getQuestionnaireById($id){
 
-        if(!is_numeric($taskId)) {
+        if(!is_numeric($id)) {
             $this->prepareResponse("BAD_REQUEST", null);
             return;
         }
 
-        $questionnaire = $this->model->getQuestionnaireById($taskId);
+        $questionnaire = $this->model->getQuestionnaireById($id);
         $num = count($questionnaire);
 
         if($num == 0)

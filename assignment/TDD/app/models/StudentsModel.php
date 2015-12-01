@@ -13,8 +13,13 @@ class StudentsModel {
         $this->dbmanager->openConnection();
     }
 
-    public function getStudentsAges($nationality) {
-        return ($this->StudentsDAO->getAges ($nationality));
+    public function  getStudents($id){
+        return ($this->StudentsDAO->getStudents($id));
+    }
+
+
+    public function getStudentsByNationality($nationality) {
+        return ($this->StudentsDAO->getStudentsByNationality($nationality));
     }
 
     public function __destruct() {

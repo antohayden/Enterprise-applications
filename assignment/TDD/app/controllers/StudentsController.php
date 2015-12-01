@@ -15,13 +15,19 @@ class StudentsController {
         $this->operations = new Operations();
 
 		if ($action != null) {
+
 			switch ($action) {
-				case ACTION_GET_STUDENTS_AGES :
-					$this->getStudentsAges(null);
-					break;
-                case ACTION_GET_STUDENTS_AGES_BY_NATIONALITY :
+
+                case ACTION_GET_STUDENTS :
+                    $this->getStudents(null);
+                    break;
+                case ACTION_GET_STUDENT_BY_ID :
+                    $string = $parameters["StudentNumberString"];
+                    $this->getStudents($string);
+                    break;
+                case ACTION_GET_STUDENTS_BY_NATIONALITY :
                     $string = $parameters ["NationalityString"];
-                    $this->getStudentsAges($string);
+                    $this->getStudentsByNationality($string);
                     break;
 				default:
 			}
@@ -43,19 +49,25 @@ class StudentsController {
         }
     }
 
-	private function getStudentsAges($nationality) {
+    private function getStudents($id){
 
-        $data = $this->model->getStudentsAges($nationality);
+        $data = $this->model->getStudents($id);
 
         if(count($data) == 0)
             $this->prepareResponse(null, null);
-        else {
-            $avgAge = $this->operations->calculateMean($data);
-            $stdDev = $this->operations->calculateStandardDeviation($data);
+        else{
+                $this->prepareResponse( 1 , $data);
+        }
+    }
 
-            $response = array('StdDev' => $stdDev, 'AvgAge' => $avgAge);
+	private function getStudentsByNationality($nationality) {
 
-            $this->prepareResponse($data, $response);
+        $data = $this->model->getStudentsByNationality($nationality);
+
+        if(count($data) == 0)
+            $this->prepareResponse(null, null);
+        else{
+            $this->prepareResponse( 1 , $data);
         }
 	}
 
