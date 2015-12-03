@@ -22,6 +22,10 @@ class StudentsModel {
         return ($this->StudentsDAO->getStudentsByNationality($nationality));
     }
 
+    public function getStudentsNationality(){
+        return ($this->StudentsDAO->getStudentsNationality());
+    }
+
     public function __destruct() {
         $this->StudentsDAO = null;
         $this->dbmanager->closeConnection();

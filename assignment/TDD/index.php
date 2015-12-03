@@ -28,7 +28,7 @@ $app->map ( "/login", function () use($app) {
 } )->via ( "GET");
 
 
-$app->map ( "/statistics/students", function () use($app) {
+$app->map ( "/statistics/students/", function () use($app) {
 
     $action = ACTION_GET_STUDENTS;
 	return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app);
@@ -43,6 +43,13 @@ $app->map ( "/statistics/students/:id", function ($studentNumber = null) use($ap
 
 } )->via ( "GET");
 
+$app->map ( "/statistics/students/nationality/", function () use($app) {
+
+    $action = ACTION_GET_STUDENTS_NATIONALITY;
+    return new loadRunMVCComponents ( "StudentsModel", "StudentsController", "View", $action, $app);
+
+} )->via ( "GET");
+
 $app->map ( "/statistics/students/nationality/:nationality", function ($nationality = null) use($app) {
 
     $parameters["NationalityString"] = $nationality;
@@ -52,7 +59,7 @@ $app->map ( "/statistics/students/nationality/:nationality", function ($national
 
 } )->via ( "GET");
 
-$app->map ( "/statistics/tasks", function () use($app) {
+$app->map ( "/statistics/tasks/", function () use($app) {
 
     $action = ACTION_GET_NUM_TASKS;
 
@@ -61,7 +68,7 @@ $app->map ( "/statistics/tasks", function () use($app) {
 } )->via ( "GET");
 
 /*Get all questionnaires*/
-$app->map ( "/statistics/questionnaires", function () use($app) {
+$app->map ( "/statistics/questionnaires/", function () use($app) {
 
     $action = ACTION_GET_QUESTIONNAIRES;
 
@@ -71,7 +78,7 @@ $app->map ( "/statistics/questionnaires", function () use($app) {
 
 
 /*Get the task id of all questionnaires*/
-$app->map ( "/statistics/questionnaires/task", function () use($app) {
+$app->map ( "/statistics/questionnaires/task/", function () use($app) {
 
     $action = ACTION_GET_TASK_ID_OF_QUESTIONNAIRES;
 

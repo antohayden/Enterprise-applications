@@ -25,6 +25,9 @@ class StudentsController {
                     $string = $parameters["StudentNumberString"];
                     $this->getStudents($string);
                     break;
+                case ACTION_GET_STUDENTS_NATIONALITY :
+                    $this->getStudentsNationality();
+                    break;
                 case ACTION_GET_STUDENTS_BY_NATIONALITY :
                     $string = $parameters ["NationalityString"];
                     $this->getStudentsByNationality($string);
@@ -58,6 +61,18 @@ class StudentsController {
         else{
                 $this->prepareResponse( 1 , $data);
         }
+    }
+
+    private function getStudentsNationality(){
+
+        $data  = $this->model->getStudentsNationality();
+
+        if(count($data) == 0)
+            $this->prepareResponse(null, null);
+        else{
+            $this->prepareResponse( 1 , $data);
+        }
+
     }
 
 	private function getStudentsByNationality($nationality) {

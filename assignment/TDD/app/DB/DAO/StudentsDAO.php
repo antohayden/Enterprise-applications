@@ -21,7 +21,20 @@ class StudentsDAO {
         $this->dbManager->executeQuery ( $stmt );
         $rows = $this->dbManager->fetchResults ( $stmt );
 
-        return ($rows);
+        return $rows;
+    }
+
+    public function getStudentsNationality(){
+
+        $sql = "SELECT description FROM NATIONALITIES ";
+        $sql .= "WHERE id in ";
+        $sql .= "( SELECT DISTINCT(id_nationality) FROM STUDENTS )";
+
+        $stmt = $this->dbManager->prepareQuery( $sql );
+        $this->dbManager->executeQuery( $stmt );
+        $rows = $this->dbManager->fetchResults( $stmt );
+
+        return $rows;
     }
 
     public function getStudentsByNationality($nationality) {
@@ -41,7 +54,7 @@ class StudentsDAO {
         $this->dbManager->executeQuery ( $stmt );
         $rows = $this->dbManager->fetchResults ( $stmt );
 
-        return ($rows);
+        return $rows;
     }
 
 }
