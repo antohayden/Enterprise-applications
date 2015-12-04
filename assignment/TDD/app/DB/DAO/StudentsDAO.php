@@ -26,7 +26,7 @@ class StudentsDAO {
 
     public function getStudentsNationality(){
 
-        $sql = "SELECT description FROM NATIONALITIES ";
+        $sql = "SELECT id, description FROM NATIONALITIES ";
         $sql .= "WHERE id in ";
         $sql .= "( SELECT DISTINCT(id_nationality) FROM STUDENTS )";
 
