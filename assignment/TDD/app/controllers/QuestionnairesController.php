@@ -28,6 +28,10 @@ class QuestionnairesController {
                     $string = $parameters ["QuestionIDString"];
                     $this->getQuestionnaireById($string);
                     break;
+                case ACTION_GET_QUESTIONNAIRES_BY_STUDENT_ID :
+                    $string = $parameters ["StudentIDString"];
+                    $this->getQuestionnaireByStudentId($string);
+                    break;
                 default:
             }
         }
@@ -101,7 +105,6 @@ class QuestionnairesController {
         }
     }
 
-
     private function getQuestionnaireById($id){
 
         if(!is_numeric($id)) {
@@ -110,6 +113,23 @@ class QuestionnairesController {
         }
 
         $questionnaire = $this->model->getQuestionnaireById($id);
+        $num = count($questionnaire);
+
+        if($num == 0)
+            $this->prepareResponse(null, null);
+        else {
+
+            if ( $num == 0)
+                $this->prepareResponse(null,null);
+            else {
+                $this->prepareResponse( 1 , $questionnaire);
+            }
+        }
+    }
+
+    private function getQuestionnaireByStudentId($id){
+
+        $questionnaire = $this->model->getQuestionnaireByStudentId($id);
         $num = count($questionnaire);
 
         if($num == 0)

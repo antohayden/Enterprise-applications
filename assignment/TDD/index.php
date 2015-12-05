@@ -27,7 +27,7 @@ $app->map ( "/login", function () use($app) {
 
 } )->via ( "GET");
 
-
+/*Get all students*/
 $app->map ( "/statistics/students/", function () use($app) {
 
     $action = ACTION_GET_STUDENTS;
@@ -35,6 +35,7 @@ $app->map ( "/statistics/students/", function () use($app) {
 	
 } )->via ( "GET");
 
+/*Get Student by ID*/
 $app->map ( "/statistics/students/:id", function ($studentNumber = null) use($app) {
 
     $parameters["StudentNumberString"] = $studentNumber;
@@ -43,6 +44,7 @@ $app->map ( "/statistics/students/:id", function ($studentNumber = null) use($ap
 
 } )->via ( "GET");
 
+/*Get all student nationalities*/
 $app->map ( "/statistics/students/nationality/", function () use($app) {
 
     $action = ACTION_GET_STUDENTS_NATIONALITY;
@@ -50,6 +52,7 @@ $app->map ( "/statistics/students/nationality/", function () use($app) {
 
 } )->via ( "GET");
 
+/*Get all students of a specific nationality*/
 $app->map ( "/statistics/students/nationality/:nationality", function ($nationality = null) use($app) {
 
     $parameters["NationalityString"] = $nationality;
@@ -59,6 +62,7 @@ $app->map ( "/statistics/students/nationality/:nationality", function ($national
 
 } )->via ( "GET");
 
+/*Get all tasks*/
 $app->map ( "/statistics/tasks/", function () use($app) {
 
     $action = ACTION_GET_NUM_TASKS;
@@ -102,6 +106,16 @@ $app->map ( "/statistics/questionnaires/:questionID", function ($questionID = nu
 
     $parameters["QuestionIDString"] = $questionID;
     $action = ACTION_GET_QUESTIONNAIRE_BY_ID;
+
+    return new loadRunMVCComponents ( "QuestionnairesModel", "QuestionnairesController", "View", $action, $app, $parameters);
+
+} )->via ( "GET");
+
+/*Get questionnaires by Student id*/
+$app->map ( "/statistics/questionnaires/student/:studentID", function ($studentID = null) use($app) {
+
+    $parameters["StudentIDString"] = $studentID;
+    $action = ACTION_GET_QUESTIONNAIRES_BY_STUDENT_ID;
 
     return new loadRunMVCComponents ( "QuestionnairesModel", "QuestionnairesController", "View", $action, $app, $parameters);
 

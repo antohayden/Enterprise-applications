@@ -40,64 +40,50 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769" vertical-offset="391" max-vertical-offset="2244">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state vertical-scroll-proportion="-25.5" vertical-offset="1428" max-vertical-offset="2482">
+              <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentsDAO.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/DB/DAO/StudentsDAO.php">
+      <file leaf-file-name="QuestionnairesModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/QuestionnairesModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5520717" vertical-offset="0" max-vertical-offset="1139">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+            <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="952">
+              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionnairesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/QuestionnairesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.384615" vertical-offset="205" max-vertical-offset="1258">
+              <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
               <folding>
-                <marker date="1449176066740" expanded="true" signature="187:209" placeholder="SELECT * FRO..STUDENTS..." />
-                <marker date="1449176066740" expanded="true" signature="597:623" placeholder="SELECT * FRO..nationalitie..." />
-                <marker date="1449176066740" expanded="true" signature="597:638" placeholder="SELECT id, d..NATIONALITIES..." />
-                <marker date="1449176066740" expanded="true" signature="1014:1036" placeholder="SELECT * FRO..STUDENTS..." />
+                <element signature="n#prepareResponse#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+                <element signature="n#getQuestionnaires#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+                <element signature="n#getTaskIdOfQuestionnaires#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+                <element signature="n#getQuestionnairesByTaskId#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+                <element signature="n#getQuestionnaireById#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/StudentsController.php">
+      <file leaf-file-name="QuestionnairesDAO.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/DB/DAO/QuestionnairesDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="425" max-vertical-offset="1615">
-              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/View.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1173">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/conf/config.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.153846" vertical-offset="42" max-vertical-offset="952">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentsModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/StudentsModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="663">
-              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-              <folding />
+            <state vertical-scroll-proportion="0.29122055" vertical-offset="0" max-vertical-offset="1309">
+              <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+              <folding>
+                <element signature="n#getQuestionnaires#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getTaskIdOfQuestionnaires#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getQuestionnaireById#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getQuestionnaireByStudentId#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,14 +126,14 @@
         <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/Slim/Http/Util.php" />
         <option value="$PROJECT_DIR$/app/views/View.php" />
-        <option value="$PROJECT_DIR$/app/DB/DAO/QuestionnairesDAO.php" />
-        <option value="$PROJECT_DIR$/app/models/QuestionnairesModel.php" />
-        <option value="$PROJECT_DIR$/app/controllers/QuestionnairesController.php" />
-        <option value="$PROJECT_DIR$/app/conf/config.inc.php" />
-        <option value="$PROJECT_DIR$/app/models/StudentsModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/StudentsController.php" />
         <option value="$PROJECT_DIR$/app/DB/DAO/StudentsDAO.php" />
+        <option value="$PROJECT_DIR$/app/conf/config.inc.php" />
+        <option value="$PROJECT_DIR$/app/models/StudentsModel.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/app/models/QuestionnairesModel.php" />
+        <option value="$PROJECT_DIR$/app/controllers/QuestionnairesController.php" />
+        <option value="$PROJECT_DIR$/app/DB/DAO/QuestionnairesDAO.php" />
       </list>
     </option>
   </component>
@@ -160,10 +146,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -188,6 +174,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -320,7 +307,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,13 +418,13 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
@@ -448,15 +434,16 @@
     <configuration default="true" type="AppEnginePhpConfigurationType" factoryName="App Engine for PHP">
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
+      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="localServer" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" singleton="true" document_root="$PROJECT_DIR$">
@@ -494,7 +481,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -538,7 +525,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -835,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/QuestionnairesModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923" vertical-offset="0" max-vertical-offset="884">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/DB/pdoDbManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7043673" vertical-offset="0" max-vertical-offset="901">
@@ -849,40 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DB/DAO/QuestionnairesDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1972">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/QuestionnairesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23068309" vertical-offset="848" max-vertical-offset="2278">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/conf/config.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.153846" vertical-offset="42" max-vertical-offset="952">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/StudentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="425" max-vertical-offset="1615">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/StudentsModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="663">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+        <state vertical-scroll-proportion="-15.0" vertical-offset="18" max-vertical-offset="969">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -895,23 +845,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/app/DB/DAO/StudentsDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769" vertical-offset="391" max-vertical-offset="2244">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <marker date="1449247387210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..STUDENTS..." />
+            <marker date="1449247387210" expanded="true" signature="-1:-1" placeholder="SELECT id, d..NATIONALITIES..." />
+            <marker date="1449247387210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..STUDENTS..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/StudentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41862956" vertical-offset="51" max-vertical-offset="1615">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DB/DAO/StudentsDAO.php">
+    <entry file="file://$PROJECT_DIR$/app/models/StudentsModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5520717" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.4732334" vertical-offset="0" max-vertical-offset="934">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.5" vertical-offset="1428" max-vertical-offset="2482">
+          <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/QuestionnairesModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="952">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/QuestionnairesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.384615" vertical-offset="205" max-vertical-offset="1258">
+          <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
           <folding>
-            <marker date="1449176066740" expanded="true" signature="187:209" placeholder="SELECT * FRO..STUDENTS..." />
-            <marker date="1449176066740" expanded="true" signature="597:623" placeholder="SELECT * FRO..nationalitie..." />
-            <marker date="1449176066740" expanded="true" signature="597:638" placeholder="SELECT id, d..NATIONALITIES..." />
-            <marker date="1449176066740" expanded="true" signature="1014:1036" placeholder="SELECT * FRO..STUDENTS..." />
+            <element signature="n#prepareResponse#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+            <element signature="n#getQuestionnaires#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+            <element signature="n#getTaskIdOfQuestionnaires#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+            <element signature="n#getQuestionnairesByTaskId#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+            <element signature="n#getQuestionnaireById#0;n#QuestionnairesController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DB/DAO/QuestionnairesDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29122055" vertical-offset="0" max-vertical-offset="1309">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+          <folding>
+            <element signature="n#getQuestionnaires#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getTaskIdOfQuestionnaires#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getQuestionnaireById#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getQuestionnaireByStudentId#0;n#QuestionnaireDAO#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

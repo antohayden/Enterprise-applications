@@ -55,6 +55,24 @@ class QuestionnaireDAO {
         return ($rows);
     }
 
+    public function getQuestionnaireByStudentId($id){
+
+        $sql = "SELECT * ";
+        $sql .= "FROM questionnaire ";
+
+        if ($id) {
+            $sql .= "WHERE student_number = '";
+            $sql .=  $id;
+            $sql .=  "'";
+        }
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
+
     public function getMWL($taskId) {
 
         $sql = "SELECT MWL_total ";
