@@ -91,6 +91,27 @@ $app->map ( "/statistics/tasks/course/:id", function ($courseId = null) use($app
 
 } )->via ( "GET");
 
+
+
+/*Get all courses*/
+$app->map ( "/statistics/course/", function () use($app) {
+
+    $action = ACTION_GET_COURSES;
+
+    return new loadRunMVCComponents ( "CoursesModel", "CoursesController", "View", $action, $app);
+
+} )->via ( "GET");
+
+/*Get course by id*/
+$app->map ( "/statistics/course/:id", function ($courseId = null) use($app) {
+
+    $parameters["CourseIdString"] = $courseId;
+    $action = ACTION_GET_COURSE_BY_ID;
+
+    return new loadRunMVCComponents ( "CoursesModel", "CoursesController", "View", $action, $app, $parameters);
+
+} )->via ( "GET");
+
 /*Get all questionnaires*/
 $app->map ( "/statistics/questionnaires/", function () use($app) {
 
