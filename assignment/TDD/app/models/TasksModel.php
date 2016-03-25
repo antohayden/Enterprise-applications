@@ -13,8 +13,16 @@ class TasksModel {
         $this->dbmanager->openConnection();
     }
 
-    public function getTaskDurations() {
-        return ($this->TasksDAO->getTaskDurations ());
+    public function getTasks() {
+        return ($this->TasksDAO->getTasks());
+    }
+
+    public function getTaskById($string){
+        return ($this->TasksDAO->getTaskById($string));
+    }
+
+    public function getTasksByCourseId($string){
+        return ($this->TasksDAO->getTasksByCourseId($string));
     }
 
     public function __destruct() {

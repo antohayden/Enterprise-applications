@@ -65,9 +65,29 @@ $app->map ( "/statistics/students/nationality/:nationality", function ($national
 /*Get all tasks*/
 $app->map ( "/statistics/tasks/", function () use($app) {
 
-    $action = ACTION_GET_NUM_TASKS;
+    $action = ACTION_GET_TASKS;
 
     return new loadRunMVCComponents ( "TasksModel", "TasksController", "View", $action, $app);
+
+} )->via ( "GET");
+
+/*Get task by id*/
+$app->map ( "/statistics/tasks/:id", function ($taskId = null) use($app) {
+
+    $parameters["TaskIdString"] = $taskId;
+    $action = ACTION_GET_TASK_BY_ID;
+
+    return new loadRunMVCComponents ( "TasksModel", "TasksController", "View", $action, $app, $parameters);
+
+} )->via ( "GET");
+
+/*Get task by course id*/
+$app->map ( "/statistics/tasks/course/:id", function ($courseId = null) use($app) {
+
+    $parameters["CourseIdString"] = $courseId;
+    $action = ACTION_GET_TASKS_BY_COURSE_ID;
+
+    return new loadRunMVCComponents ( "TasksModel", "TasksController", "View", $action, $app, $parameters);
 
 } )->via ( "GET");
 

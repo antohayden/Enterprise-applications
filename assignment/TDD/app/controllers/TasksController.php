@@ -16,8 +16,16 @@ class TasksController {
 
         if ($action != null) {
             switch ($action) {
-                case ACTION_GET_NUM_TASKS :
-                    $this->getTaskDurations();
+                case ACTION_GET_TASKS :
+                    $this->getTasks();
+                    break;
+                case ACTION_GET_TASK_BY_ID :
+                    $string = $parameters["TaskIdString"];
+                    $this->getTaskById($string);
+                    break;
+                case ACTION_GET_TASKS_BY_COURSE_ID :
+                    $string = $parameters["CourseIdString"];
+                    $this->getTasksByCourseId($string);
                     break;
                 default:
             }
@@ -39,20 +47,46 @@ class TasksController {
         }
     }
 
-    private function getTaskDurations(){
+    private function getTasks(){
 
-        $data = $this->model->getTaskDurations();
+        $data = $this->model->getTasks();
 
         if(count($data) == 0)
             $this->prepareResponse(null, null);
         else {
-            $avgAge = $this->operations->calculateMean($data);
-            $stdDev = $this->operations->calculateStandardDeviation($data);
 
-            $response = array('NumTasks' => count($data), 'StdDev' => $stdDev, 'AvgDuration' => $avgAge);
-
-            $this->prepareResponse($data, $response);
+            $this->prepareResponse(1, $data);
         }
+    }
+
+
+    private function getTaskById($string){
+
+        if(is_numeric($string)) {
+            $data = $this->model->getTaskById($string);
+            if(count($data) == 0)
+                $this->prepareResponse(null, null);
+            else {
+                $this->prepareResponse(1, $data);
+            }
+        }
+        else
+            $this->prepareResponse(null, null);
+    }
+
+
+    private function getTasksByCourseId($string)
+    {
+
+        if (is_numeric($string)) {
+            $data = $this->model->getTasksByCourseId($string);
+            if (count($data) == 0)
+                $this->prepareResponse(null, null);
+            else {
+                $this->prepareResponse(1, $data);
+            }
+        } else
+            $this->prepareResponse(null, null);
     }
 
 }

@@ -8,9 +8,9 @@ class TasksDAO {
         $this->dbManager = $DBMngr;
     }
 
-    public function getTaskDurations() {
+    public function getTasks() {
 
-        $sql = "SELECT duration_mins ";
+        $sql = "SELECT * ";
         $sql .= "FROM tasks ";
 
         $stmt = $this->dbManager->prepareQuery ( $sql );
@@ -20,5 +20,32 @@ class TasksDAO {
         return ($rows);
     }
 
+    public function getTaskById($string) {
+
+        $sql = "SELECT * ";
+        $sql .= "FROM tasks ";
+        $sql .= "WHERE TASK_ID = ";
+        $sql .= $string;
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
+
+    public function getTasksByCourseId($string) {
+
+        $sql = "SELECT * ";
+        $sql .= "FROM tasks ";
+        $sql .= "WHERE COURSE_ID = ";
+        $sql .= $string;
+
+        $stmt = $this->dbManager->prepareQuery ( $sql );
+        $this->dbManager->executeQuery ( $stmt );
+        $rows = $this->dbManager->fetchResults ( $stmt );
+
+        return ($rows);
+    }
 }
 ?>
